@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Prueba_Tecnica.Models;
 
 public partial class Estudiante
-    {
+{
     public int IdEstudiante { get; set; }
 
     public int CodigoEstudiante { get; set; }

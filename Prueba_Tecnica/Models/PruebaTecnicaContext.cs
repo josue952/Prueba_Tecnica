@@ -54,35 +54,43 @@ public partial class PruebaTecnicaContext : DbContext
             entity.HasKey(e => e.IdMateria).HasName("PK__Materias__4B740AB3747E2B94");
 
             entity.Property(e => e.IdMateria).HasColumnName("idMateria");
-            entity.Property(e => e.CodigoInstructor)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("codigoInstructor");
-            entity.Property(e => e.CodigoUsuario)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("codigoUsuario");
-            entity.Property(e => e.DetallesBitacora)
-                .HasMaxLength(255)
-                .IsUnicode(false)
-                .HasColumnName("detallesBitacora");
-            entity.Property(e => e.Horario)
-                .HasMaxLength(50)
-                .IsUnicode(false)
-                .HasColumnName("horario");
+
+            entity.Property(e => e.CodigoEstudiante)
+                .HasColumnName("codigoEstudiante")
+                .HasColumnType("int");
+
             entity.Property(e => e.NombreMateria)
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("nombreMateria");
+
+            entity.Property(e => e.CodigoInstructor)
+                .HasColumnName("codigoInstructor")
+                .HasColumnType("int");
+
+            entity.Property(e => e.Horario)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("horario");
+
             entity.Property(e => e.Ubicacion)
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("ubicacion");
+
+            entity.Property(e => e.DetallesBitacora)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("detallesBitacora");
         });
 
         OnModelCreatingPartial(modelBuilder);
     }
 
 
+
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
+
+
+
